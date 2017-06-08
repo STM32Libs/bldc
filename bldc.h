@@ -14,7 +14,7 @@ class bldc
 public:
     bldc(Serial *ps,PinName v_pwm1,PinName v_pwm2,PinName v_pwm3,PinName v_en);
 
-    void setVector(float angle,float norm);
+    void setVector(int angle,float norm);
 public:
     DigitalOut  enable;
     PwmOut      pwm1;
@@ -25,6 +25,7 @@ private:
     uint16_t pwm2_shadow;
     uint16_t pwm3_shadow;
     Serial *ser;
+    uint16_t    sin_Table[256];
 };
 
 
